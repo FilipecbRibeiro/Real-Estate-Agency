@@ -1,0 +1,31 @@
+<!-- CHECK BOOTSTRAP 
+https://getbootstrap.com/docs/4.5/components/alerts/
+
+    CHECK DJANGO MESSAGES
+
+    https://docs.djangoproject.com/en/3.0/ref/contrib/messages/
+-->
+
+{% if messages %}
+    {%for run in messages%}
+        <div id="message" class="container">
+
+            <div class="alert alert-{{run.tags}} alert-dismissible text-center" role="alert">
+ 
+                <button type="button" class="close" data-dismiss ="alert"><span aria-hidden="true">&times;</span></button>
+                <strong>
+                                {%if run.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+                                ERROR:
+                                {%else%}
+                                {{run.tags|title}}
+                                {%endif%}
+
+
+                </strong>
+            {{run}}
+            </div>
+
+            </div>
+               
+    {%endfor%}
+{%endif%}

@@ -1,0 +1,55 @@
+##################
+
+MODEL / DB FIELDS
+
+#################
+
+
+
+###### 3 TABLES ######
+
+    3.1#LISTING#
+       id: int
+       realtor: int (Foreign key(Realtor) )
+       title:string
+       adress:string
+       city:string
+       state: string
+       zipcode:string
+       description:text
+       price:int
+       bedrooms:int
+       bathrooms:int
+       garage:int[0]
+       square_feet: int
+       is_published: bool [true]
+       lot_size:Flota
+       list_date:date
+       photo_main:str
+       photo_1:str
+       photo_2:str
+       photo_3:str
+       photo_4:str      
+       photo_5:str
+       photo_6:str
+
+    3.2#.REALTOR#
+    id: int
+    name:string
+    photo:string
+    is_emp_month:bool [false]
+    description:TEXT
+    email:string
+    phone:string
+    hire_date: Date
+
+    3.3#CONTACT#
+    id:int
+    user_id: int ( if logged in)
+    listing:int (conneected to the title of the listing)
+    listing_id:int (conneected to the id of the listing)
+    name:string
+    email:string
+    phone:string 
+    message: text
+    contact_date:Date
